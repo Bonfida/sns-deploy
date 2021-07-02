@@ -1,5 +1,20 @@
 # SNS Deploy
 
+```
+  ____    _   _   ____      ____                   _
+ / ___|  | \ | | / ___|    |  _ \    ___   _ __   | |   ___    _   _
+ \___ \  |  \| | \___ \    | | | |  / _ \ | '_ \  | |  / _ \  | | | |
+  ___) | | |\  |  ___) |   | |_| | |  __/ | |_) | | | | (_) | | |_| |
+ |____/  |_| \_| |____/    |____/   \___| | .__/  |_|  \___/   \__, |
+                                          |_|                  |___/
+
+
+- 🦄  Wallet loaded
+✔ ⚡️  Solana account updated
+✔ 🧭  Solana Explorer: https://explorer.solana.com/tx/ByVDzDxccVGmEf1pVD3QjKhCqiu2i5E1gokv2tyBP2Q9G4UHAyYMRTF84wn2Pxkfi2ePktwX8iAvftjsVqFHYBB
+✨  Done in 7.99s.
+```
+
 Upload static website to IPFS pinning services and update your Solana Name Service Records.
 
 ```
