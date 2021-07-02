@@ -1,0 +1,34 @@
+{
+    "extends": "@tsconfig/recommended/tsconfig.json",
+    "ts-node": {
+      "compilerOptions": {
+        "module": "commonjs",
+        "baseUrl": "./",
+        "paths": {
+            "*" : ["types/*"]
+        }
+      }
+    },
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "es2019",
+      "outDir": "bin",
+      "rootDir": "lib",
+      "declaration": true,
+      "noImplicitAny": false,
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "baseUrl": ".",
+      "paths": {
+        "*": ["node_modules/*", "lib/types/*"]
+      },
+      "resolveJsonModule": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true
+    },
+    "include": ["lib/*"],
+    "exclude": ["lib/**/*.test.ts", "**/node_modules", "bin"]
+  }
+  

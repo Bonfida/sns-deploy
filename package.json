@@ -1,0 +1,29 @@
+{
+  "name": "sns-deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "sns-deploy": "./bin/index.js"
+  },
+  "dependencies": {
+    "@solana/spl-name-service": "^0.1.2",
+    "@solana/web3.js": "^1.20.0",
+    "@types/node": "^15.12.5",
+    "@types/yargs": "^17.0.0",
+    "chalk": "^4.1.1",
+    "clear": "^0.1.0",
+    "figlet": "^1.5.0",
+    "ora": "^5.4.1",
+    "typescript": "^4.3.4",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "ts-node": "^10.0.0"
+  },
+  "scripts": {
+    "dev": "tsc && node bin/index.js",
+    "build": "tsc"
+  }
+}
