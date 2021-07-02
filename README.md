@@ -1,18 +1,23 @@
 # SNS Deploy
 
 ```
-  ____    _   _   ____      ____                   _
- / ___|  | \ | | / ___|    |  _ \    ___   _ __   | |   ___    _   _
+  ____    _   _   ____      ____                   _                 
+ / ___|  | \ | | / ___|    |  _ \    ___   _ __   | |   ___    _   _ 
  \___ \  |  \| | \___ \    | | | |  / _ \ | '_ \  | |  / _ \  | | | |
   ___) | | |\  |  ___) |   | |_| | |  __/ | |_) | | | | (_) | | |_| |
  |____/  |_| \_| |____/    |____/   \___| | .__/  |_|  \___/   \__, |
-                                          |_|                  |___/
+                                          |_|                  |___/ 
 
 
+⠋     Deploying on IPFS
+- 📦  Calculating size of build…
+✔ 🚚  Directory build weighs 6.5 MiB.
+- 📠  Uploading and pinning to Infura…
+✔ 📌  Added and pinned to Infura with hash:
+- ✅  Content uploaded on IPFS
 - 🦄  Wallet loaded
 ✔ ⚡️  Solana account updated
-✔ 🧭  Solana Explorer: https://explorer.solana.com/tx/ByVDzDxccVGmEf1pVD3QjKhCqiu2i5E1gokv2tyBP2Q9G4UHAyYMRTF84wn2Pxkfi2ePktwX8iAvftjsVqFHYBB
-✨  Done in 7.99s.
+✔ 🧭  Solana Explorer: https://explorer.solana.com/tx/5HdYkonKyjcTG5vLjSMCkjC71LHxidV7DW5XJpuzCg5QfuHt9wxKcNYrGP9xEew2NrLXV98fRnzt2EgbfL9DXEEH
 ```
 
 Upload static website to IPFS pinning services and update your Solana Name Service Records.
