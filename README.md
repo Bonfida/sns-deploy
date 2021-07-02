@@ -23,7 +23,7 @@
 Upload static website to IPFS pinning services and update your Solana Name Service Records.
 
 ```
-yarn add global @bonfida/sns-deploy
+yarn global add @bonfida/sns-deploy
 ```
 
 ```
