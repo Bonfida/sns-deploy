@@ -1,12 +1,12 @@
 # SNS Deploy
 
 ```
-  ____    _   _   ____      ____                   _                 
- / ___|  | \ | | / ___|    |  _ \    ___   _ __   | |   ___    _   _ 
+  ____    _   _   ____      ____                   _
+ / ___|  | \ | | / ___|    |  _ \    ___   _ __   | |   ___    _   _
  \___ \  |  \| | \___ \    | | | |  / _ \ | '_ \  | |  / _ \  | | | |
   ___) | | |\  |  ___) |   | |_| | |  __/ | |_) | | | | (_) | | |_| |
  |____/  |_| \_| |____/    |____/   \___| | .__/  |_|  \___/   \__, |
-                                          |_|                  |___/ 
+                                          |_|                  |___/
 
 
 ⠋     Deploying on IPFS
@@ -39,8 +39,9 @@ sns-deploy -d bonfida -w wallet.json -p build
 ### Options
 
 - Domain (d): Domain name you own
-- Wallet (w): Wallet that owns the domain name
+- Solana Wallet (w): Path to the Solana Wallet that owns the domain name
 - Path (p): Path to the folder you want to upload to IPFS
+- Arweave Wallet (W): Path to your Arweave wallet (optional)
 
 ## IPFS
 
