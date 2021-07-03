@@ -47,6 +47,10 @@ sns-deploy -d bonfida -w wallet.json -p build
 
 To deploy on IPFS, the CLI uses [ipfs-deploy](https://github.com/ipfs-shipyard/ipfs-deploy). By default it pins the content to Infura.
 
+## Arweave
+
+To deploy on Arweave, the CLI uses [@textury/arkb](https://github.com/textury/arkb).
+
 ## Solana Name Service
 
 The CLI will update the content of Solana account of your **.sol** domain.
