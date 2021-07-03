@@ -10,6 +10,7 @@ import fs from "fs";
 import { Keypair } from "@solana/web3.js";
 import ora from "ora";
 import { execSync } from "child_process";
+import { postIpfs2Arweave } from "./utils";
 
 clear();
 
@@ -44,6 +45,10 @@ const argv = yargs
           alias: "path",
           describe: "Path to the folder to deploy ",
         },
+        W: {
+          alias: "arweave-wallet",
+          describe: "Path to the Arweave wallet",
+        },
       });
     }
   )
@@ -55,6 +60,7 @@ let options = {
   content: argv.content as string | undefined | null,
   domain: argv.domain as string,
   path: argv.p as string,
+  arweaveWallet: argv.W as string,
 };
 
 if (options.domain.includes(".sol")) {
@@ -64,11 +70,18 @@ if (options.domain.includes(".sol")) {
 export const deployIpfs = (path: string) => {
   const cmd = `npx ipfs-deploy ${path} -C -O`;
   const cid = execSync(cmd).toString();
-  return cid;
+  return cid.trim();
+};
+
+export const deployArweave = (path: string, wallet: string) => {
+  const cmd = `npx @textury/arkb deploy ${path} --wallet ${wallet} --auto-confirm`;
+  const hash = execSync(cmd).toString();
+  return hash.split("https://arweave.net/")[1];
 };
 
 export const main = async () => {
-  let cid: null | string = "";
+  let cid: null | string = null; // IPFS
+  let hash: null | string = null; // Arweave
   try {
     if (options.path && options.content) {
       throw new Error(
@@ -79,22 +92,34 @@ export const main = async () => {
       throw new Error("Invalid params");
     }
     if (options.path) {
+      // Deploy on IPFS
       let loading = ora(chalk.green(`    Deploying on IPFS\n`)).start();
       cid = deployIpfs(options.path);
       loading.stop();
       console.log("- ✅  Content uploaded on IPFS");
+      // Deploy on Arweave
+      if (!!options.arweaveWallet) {
+        let loading = ora(chalk.green(`    Deploying on Arweave\n`)).start();
+        hash = deployArweave(options.path, options.arweaveWallet);
+        loading.stop();
+        console.log("- ✅  Content uploaded on Arweave");
+      }
     }
-    let loading = ora(chalk.green(`Loading wallet`)).start();
+    let loading = ora(chalk.green(`Loading Solana wallet\n`)).start();
     // Load wallet
     const secretKey = fs.readFileSync(options.wallet).toString();
     const signer = Keypair.fromSecretKey(Buffer.from(JSON.parse(secretKey)));
     loading.stop();
     console.log("- 🦄  Wallet loaded");
+    if (cid && hash) {
+      options.content = `ipfs=${cid}|arweave=${hash}`;
+    } else if (cid) {
+      options.content = `ipfs=${cid}`;
+    }
+    if (!options.content) throw new Error("Invalid params");
     loading = ora(
       chalk.green(`- 🪄  Updating account with content: ${options.content}`)
     ).start();
-    options.content = options.path && cid ? cid : options.content;
-    if (!options.content) throw new Error("Invalid params");
     const tx = await updateContent(
       connection,
       options.domain,
