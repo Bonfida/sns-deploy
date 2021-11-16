@@ -10,7 +10,6 @@ import fs from "fs";
 import { Keypair } from "@solana/web3.js";
 import ora from "ora";
 import { execSync } from "child_process";
-import { postIpfs2Arweave } from "./utils";
 
 clear();
 
