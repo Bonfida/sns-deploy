@@ -49,7 +49,7 @@ To deploy on IPFS, the CLI uses [ipfs-deploy](https://github.com/ipfs-shipyard/i
 
 ## Arweave
 
-To deploy on Arweave, the CLI uses [@textury/arkb](https://github.com/textury/arkb).
+To deploy on Arweave, the CLI uses [arkb](https://github.com/textury/arkb).
 
 ## Solana Name Service
 

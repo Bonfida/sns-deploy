@@ -74,7 +74,7 @@ export const deployIpfs = (path: string) => {
 };
 
 export const deployArweave = (path: string, wallet: string) => {
-  const cmd = `npx @textury/arkb deploy ${path} --wallet ${wallet} --auto-confirm`;
+  const cmd = `npx arkb deploy ${path} --wallet ${wallet} --auto-confirm`;
   const hash = execSync(cmd).toString();
   return hash.split("https://arweave.net/")[1];
 };
